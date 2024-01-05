@@ -1,6 +1,7 @@
 import { GeistSans } from 'geist/font/sans'
-import ThemeProvider from '@/app/providers/ThemeProvider'
+import ThemeProvider from '@/providers/ThemeProvider'
 import NextTopLoader from 'nextjs-toploader'
+import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 
 const defaultUrl = process.env.VERCEL_URL
@@ -34,6 +35,8 @@ export default function RootLayout({
         >
           <main className="flex min-h-screen flex-col items-center">
             {children}
+            <Analytics />{' '}
+            {/* ^^ remove this if you are not deploying to vercel. See more at https://vercel.com/docs/analytics  */}
           </main>
         </ThemeProvider>
       </body>

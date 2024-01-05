@@ -3,8 +3,8 @@ import SupabaseLogo from './SupabaseLogo'
 
 export default function Header() {
   return (
-    <div className="flex flex-col gap-16 items-center">
-      <div className="flex gap-8 justify-center items-center">
+    <div className="flex flex-col items-center gap-16">
+      <div className="flex items-center justify-center gap-8">
         <a
           href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
           target="_blank"
@@ -12,13 +12,13 @@ export default function Header() {
         >
           <SupabaseLogo />
         </a>
-        <span className="border-l rotate-45 h-6" />
+        <span className="h-6 rotate-45 border-l" />
         <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
           <NextLogo />
         </a>
       </div>
       <h1 className="sr-only">Supabase and Next.js Starter Template</h1>
-      <p className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center">
+      <p className="mx-auto max-w-xl text-center text-3xl !leading-tight lg:text-4xl">
         The fastest way to build apps with{' '}
         <a
           href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
@@ -38,7 +38,7 @@ export default function Header() {
           Next.js
         </a>
       </p>
-      <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-foreground/10 to-transparent my-8" />
+      <div className="my-8 w-full bg-gradient-to-r from-transparent via-foreground/10 to-transparent p-[1px]" />
     </div>
   )
 }

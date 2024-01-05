@@ -5,6 +5,7 @@ import SignUpUserSteps from '@/components/SignUpUserSteps'
 import Header from '@/components/Header'
 import { cookies } from 'next/headers'
 import { createServerClient } from '@/utils/supabase'
+import ThemeToggle from '@/components/ThemeToggle'
 
 export default async function Index() {
   const cookieStore = cookies()
@@ -39,8 +40,8 @@ export default async function Index() {
         </main>
       </div>
 
-      <footer className="flex w-full justify-center border-t border-t-foreground/10 p-8 text-center text-xs">
-        <p>
+      <footer className="w-full justify-center border-t border-t-foreground/10 p-8 text-center text-xs">
+        <p className="mb-6">
           Powered by{' '}
           <a
             href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
@@ -51,6 +52,7 @@ export default async function Index() {
             Supabase
           </a>
         </p>
+        <ThemeToggle />
       </footer>
     </div>
   )

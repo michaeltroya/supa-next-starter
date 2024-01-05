@@ -16,12 +16,12 @@ values
 `.trim()
 
 const server = `
-import { createClient } from '@/utils/supabase/server'
+import { createServerClient } from '@/utils/supabase'
 import { cookies } from 'next/headers'
 
 export default async function Page() {
   const cookieStore = cookies()
-  const supabase = createClient(cookieStore)
+  const supabase = createServerClient(cookieStore)
   const { data: notes } = await supabase.from('notes').select()
 
   return <pre>{JSON.stringify(notes, null, 2)}</pre>
@@ -31,12 +31,12 @@ export default async function Page() {
 const client = `
 'use client'
 
-import { createClient } from '@/utils/supabase/client'
+import { createBrowserClient } from '@/utils/supabase'
 import { useEffect, useState } from 'react'
 
 export default function Page() {
   const [notes, setNotes] = useState<any[] | null>(null)
-  const supabase = createClient()
+  const supabase = createBrowserClient()
 
   useEffect(() => {
     const getData = async () => {
@@ -58,12 +58,12 @@ export default function SignUpUserSteps() {
           Head over to the{' '}
           <Link
             href="/login"
-            className="font-bold hover:underline text-foreground/80"
+            className="font-bold text-foreground/80 hover:underline"
           >
             Login
           </Link>{' '}
-          page and sign up your first user. It's okay if this is just you for
-          now. Your awesome idea will have plenty of users later!
+          page and sign up your first user. It&apos;s okay if this is just you
+          for now. Your awesome idea will have plenty of users later!
         </p>
       </Step>
 
@@ -72,18 +72,18 @@ export default function SignUpUserSteps() {
           Head over to the{' '}
           <a
             href="https://supabase.com/dashboard/project/_/editor"
-            className="font-bold hover:underline text-foreground/80"
+            className="font-bold text-foreground/80 hover:underline"
             target="_blank"
             rel="noreferrer"
           >
             Table Editor
           </a>{' '}
           for your Supabase project to create a table and insert some example
-          data. If you're stuck for creativity, you can copy and paste the
+          data. If you&apos;re stuck for creativity, you can copy and paste the
           following into the{' '}
           <a
             href="https://supabase.com/dashboard/project/_/sql/new"
-            className="font-bold hover:underline text-foreground/80"
+            className="font-bold text-foreground/80 hover:underline"
             target="_blank"
             rel="noreferrer"
           >
@@ -98,7 +98,7 @@ export default function SignUpUserSteps() {
         <p>
           To create a Supabase client and query data from an Async Server
           Component, create a new page.tsx file at{' '}
-          <span className="px-2 py-1 rounded-md bg-foreground/20 text-foreground/80">
+          <span className="rounded-md bg-foreground/20 px-2 py-1 text-foreground/80">
             /app/notes/page.tsx
           </span>{' '}
           and add the following.
@@ -109,7 +109,7 @@ export default function SignUpUserSteps() {
       </Step>
 
       <Step title="Build in a weekend and scale to millions!">
-        <p>You're ready to launch your product to the world! 🚀</p>
+        <p>You&apos;re ready to launch your product to the world! 🚀</p>
       </Step>
     </ol>
   )

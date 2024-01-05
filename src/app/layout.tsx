@@ -1,4 +1,6 @@
 import { GeistSans } from 'geist/font/sans'
+import ThemeProvider from '@/app/providers/ThemeProvider'
+import NextTopLoader from 'nextjs-toploader'
 import './globals.css'
 
 const defaultUrl = process.env.VERCEL_URL
@@ -17,11 +19,23 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={GeistSans.className}>
+    <html
+      lang="en"
+      className={GeistSans.className}
+      style={{ colorScheme: 'dark' }}
+    >
       <body className="bg-background text-foreground">
-        <main className="flex min-h-screen flex-col items-center">
-          {children}
-        </main>
+        <NextTopLoader showSpinner={false} height={2} color="#2acf80" />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="flex min-h-screen flex-col items-center">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   )

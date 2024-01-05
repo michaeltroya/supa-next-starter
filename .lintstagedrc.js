@@ -10,4 +10,5 @@ module.exports = {
     buildEslintCommand,
     'prettier --ignore-path .gitignore --write',
   ],
+  '*.{ts,tsx}': ['tsc --pretty --noEmit'],
 }

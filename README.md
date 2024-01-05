@@ -1,51 +1,53 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
-</a>
+![image](https://github.com/michaeltroya/supa-next-starter/assets/38507347/2ea40874-98de-49ec-ab6a-74c816e6ca22)
+
+<h1 align="center">⚡ SupaNext Starter Kit ⚡</h1>
 
 <p align="center">
- The fastest way to build apps with Next.js and Supabase
+ The Last Next.js and Supabase Starter You Will Ever Need
 </p>
+
+<div align="center">
+
+<img alt="GitHub License" src="https://img.shields.io/github/license/michaeltroya/supa-next-starter">
+
+  <a href="https://twitter.com/intent/follow?screen_name=michaeltroya_">
+   <img alt="X (formerly Twitter) Follow" src="https://img.shields.io/twitter/follow/michaeltroya_">
+  </a>
+</div>
+
+<div align="center">
+  <sub>Created by <a href="https://twitter.com/michaeltroya_">Michael Troya</a>
+</div>
+
+<br/>
 
 <p align="center">
   <a href="#features"><strong>Features</strong></a> ·
-  <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
   <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
+  <a href="#documentation"><strong>Documentation</strong></a> ·
   <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
 </p>
 <br/>
 
 ## Features
 
-- Works across the entire [Next.js](https://nextjs.org) stack
-  - App Router
-  - Pages Router
-  - Middleware
-  - Client
-  - Server
-  - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-  - Environment variables automatically assigned to Vercel project
-
-## Demo
-
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
-
-## Deploy to Vercel
-
-Vercel deployment will guide you through creating a Supabase account and project.
-
-After installation of the Supabase integration, all relevant environment variables will be assigned to the project so the deployment is fully functioning.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&project-name=nextjs-with-supabase&repository-name=nextjs-with-supabase&demo-title=nextjs-with-supabase&demo-description=This%20starter%20configures%20Supabase%20Auth%20to%20use%20cookies%2C%20making%20the%20user's%20session%20available%20throughout%20the%20entire%20Next.js%20app%20-%20Client%20Components%2C%20Server%20Components%2C%20Route%20Handlers%2C%20Server%20Actions%20and%20Middleware.&demo-url=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&demo-image=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2Fopengraph-image.png&integration-ids=oac_VqOgBHqhEoFTPzGkPd7L0iH6)
-
-The above will also clone the Starter kit to your GitHub, you can clone that locally and develop locally.
-
-If you wish to just develop locally and not deploy to Vercel, [follow the steps below](#clone-and-run-locally).
+- ⚡️ Next.js 14 (App Router)
+- 💚 Supabase w/ supabase-ssr - Works across the entire [Next.js](https://nextjs.org) stack (App Router, Pages Router, Client, Server, Middleware, It just works!)
+- ⚛️ React 18
+- ⛑ TypeScript
+- 📦 pnpm - Fast, disk space efficient package manager
+- 🎨 Tailwind
+- 🔌 [shadcn/ui](https://ui.shadcn.com/) - Beautifully designed components that you can copy and paste into your apps.
+- 🧪 Jest w/SWC + React Testing Library - Unit tests for all of your code.
+- 📏 ESLint — To find and fix problems in your code
+- 💖 Prettier — Code Formatter for consistent style
+- 🐶 Husky — For running scripts before committing
+- 🚫 lint-staged — Run ESLint and Prettier against staged Git files
+- 👷 Github Actions — Run Type Checks, Tests, and Linters on Pull Requests
+- 🗂 Path Mapping — Import components or images using the `@` prefix
+- ⚪⚫ Dark mode - Toggle theme modes with [next-themes](https://github.com/pacocoursey/next-themes)
+- ✨ Next Top Loader - Render a pleasent top loader on navigation with [nextjs-toploader](https://github.com/TheSGJ/nextjs-toploader)
+- 🔋 Lots Extras - Next Bundle Analyzer, Vercel Analytics, Vercel Geist Font
 
 ## Clone and run locally
 
@@ -54,7 +56,9 @@ If you wish to just develop locally and not deploy to Vercel, [follow the steps 
 2. Create a Next.js app using the Supabase Starter template npx command
 
    ```bash
-   npx create-next-app -e with-supabase
+   pnpm create next-app -e https://github.com/michaeltroya/supa-next-starter
+   # or
+   npx create-next-app -e https://github.com/michaeltroya/supa-next-starter
    ```
 
 3. Use `cd` to change into the app's directory
@@ -75,19 +79,52 @@ If you wish to just develop locally and not deploy to Vercel, [follow the steps 
 5. You can now run the Next.js local development server:
 
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
    The starter kit should now be running on [localhost:3000](http://localhost:3000/).
 
 > Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
 
+# Documentation
+
+### Requirements
+
+- Node.js >= 18.17.0
+- pnpm 8
+
+### Scripts
+
+- `pnpm dev` — Starts the application in development mode at `http://localhost:3000`.
+- `pnpm build` — Creates an optimized production build of your application.
+- `pnpm start` — Starts the application in production mode.
+- `pnpm type-check` — Validate code using TypeScript compiler.
+- `pnpm lint` — Runs ESLint for all files in the `src` directory.
+- `pnpm format-check` — Runs Prettier and checks if any files have formatting issues.
+- `pnpm format` — Runs Prettier and formats files.
+- `pnpm test` — Runs all the jest tests in the project.
+- `pnpm test:ci` — Runs all the jest tests in the project, Jest will assume it is running in a CI environment.
+- `pnpm analyze` — Builds the project and opens the bundle analyzer.
+
+### Paths
+
+TypeScript is pre-configured with custom path mappings. To import components or files, use the `@` prefix.
+
+```tsx
+import { Button } from '@/components/ui/Button'
+
+// To import images or other files from the public folder
+import avatar from '@/public/avatar.png'
+```
+
+### Switch to Yarn/npm
+
+This starter uses pnpm by default, but this choice is yours. If you'd like to switch to Yarn/npm, delete the `pnpm-lock.yaml` file, install the dependencies with Yarn/npm, change the CI workflow, and Husky Git hooks to use Yarn/npm commands.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more information.
+
 ## Feedback and issues
 
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
-
-## More Supabase examples
-
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
+Please file feedback and issues [here](https://github.com/michaeltroya/supa-next-starter/issues).

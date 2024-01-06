@@ -86,6 +86,13 @@
 
 > Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
 
+## Showcase
+
+Websites started using this template:
+
+- [mainspring.pro](https://www.mainspring.pro/)
+- [Add yours](https://github.com/michaeltroya/supa-next-starter/edit/main/README.md)
+
 # Documentation
 
 ### Requirements

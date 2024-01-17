@@ -35,10 +35,12 @@
 - 💚 Supabase w/ supabase-ssr - Works across the entire [Next.js](https://nextjs.org) stack (App Router, Pages Router, Client, Server, Middleware, It just works!)
 - ⚛️ React 18
 - ⛑ TypeScript
-- 📦 pnpm - Fast, disk space efficient package manager
-- 🎨 Tailwind
+- 📦 [pnpm](https://pnpm.io/) - Fast, disk space efficient package manager
+- 🎨 [Tailwind](https://tailwindcss.com/)
 - 🔌 [shadcn/ui](https://ui.shadcn.com/) - Beautifully designed components that you can copy and paste into your apps.
 - 🧪 Jest w/SWC + React Testing Library - Unit tests for all of your code.
+- 🎛️ [MSW](https://mswjs.io/)v2 - Intercept requests inside your tests (set up for testing only)
+- 🪝[TanStackQuery](https://tanstack.com/query/v5)v5 - The best way to fetch data on the client
 - 📏 ESLint — To find and fix problems in your code
 - 💖 Prettier — Code Formatter for consistent style
 - 🐶 Husky — For running scripts before committing

@@ -9,6 +9,9 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   setupFiles: ['<rootDir>/jest.polyfills.js'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
   testEnvironment: 'jsdom',
   transform: {
     '^.+\\.(t|j)sx?$': '@swc/jest',

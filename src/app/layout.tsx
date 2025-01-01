@@ -26,6 +26,7 @@ export default function RootLayout({
       lang="en"
       className={GeistSans.className}
       style={{ colorScheme: 'dark' }}
+      suppressHydrationWarning
     >
       <body className="bg-background text-foreground">
         <NextTopLoader showSpinner={false} height={2} color="#2acf80" />

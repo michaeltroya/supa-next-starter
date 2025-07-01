@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@/test/test-utils'
+import { render, screen } from '@/test/test-utils'
 import ReactQueryExample from './ReactQueryExample'
 import { server } from '@/mocks/server'
 import { HttpResponse, http } from 'msw'

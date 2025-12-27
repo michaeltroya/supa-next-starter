@@ -92,7 +92,6 @@
 
 Websites started using this template:
 
-- [mainspring.pro](https://www.mainspring.pro/)
 - [Add yours](https://github.com/michaeltroya/supa-next-starter/edit/main/README.md)
 
 # Documentation

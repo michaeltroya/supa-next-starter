@@ -31,17 +31,17 @@
 
 ## Features
 
-- ⚡️ Next.js 14 (App Router)
+- ⚡️ Next.js 16 (App Router)
 - 💚 Supabase w/ supabase-ssr - Works across the entire [Next.js](https://nextjs.org) stack (App Router, Pages Router, Client, Server, Middleware, It just works!)
-- ⚛️ React 18
+- ⚛️ React 19
 - ⛑ TypeScript
 - 📦 [pnpm](https://pnpm.io/) - Fast, disk space efficient package manager
 - 🎨 [Tailwind](https://tailwindcss.com/)
 - 🔌 [shadcn/ui](https://ui.shadcn.com/) - Beautifully designed components that you can copy and paste into your apps.
-- 🧪 Jest w/SWC + React Testing Library - Unit tests for all of your code.
+- 🧪 Vitest + React Testing Library - Unit tests for all of your code.
 - 🎛️ [MSW](https://mswjs.io/)v2 - Intercept requests inside your tests (set up for testing only)
 - 🪝[TanStackQuery](https://tanstack.com/query/v5)v5 - The best way to fetch data on the client
-- 📏 ESLint — To find and fix problems in your code
+- 📏 ESLint 9 — To find and fix problems in your code
 - 💖 Prettier — Code Formatter for consistent style
 - 🐶 Husky — For running scripts before committing
 - 🚫 lint-staged — Run ESLint and Prettier against staged Git files
@@ -73,10 +73,10 @@
 
    ```
    NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=[INSERT SUPABASE PROJECT API ANON KEY]
+   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=[INSERT SUPABASE PROJECT API ANON KEY]
    ```
 
-   Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` can be found in [your Supabase project's API settings](https://app.supabase.com/project/_/settings/api)
+   Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` can be found in [your Supabase project's API settings](https://app.supabase.com/project/_/settings/api)
 
 5. You can now run the Next.js local development server:
 
@@ -92,7 +92,6 @@
 
 Websites started using this template:
 
-- [mainspring.pro](https://www.mainspring.pro/)
 - [Add yours](https://github.com/michaeltroya/supa-next-starter/edit/main/README.md)
 
 # Documentation
@@ -100,7 +99,7 @@ Websites started using this template:
 ### Requirements
 
 - Node.js >= 18.17.0
-- pnpm 8
+- pnpm 10
 
 ### Scripts
 
@@ -111,8 +110,9 @@ Websites started using this template:
 - `pnpm lint` — Runs ESLint for all files in the `src` directory.
 - `pnpm format-check` — Runs Prettier and checks if any files have formatting issues.
 - `pnpm format` — Runs Prettier and formats files.
-- `pnpm test` — Runs all the jest tests in the project.
-- `pnpm test:ci` — Runs all the jest tests in the project, Jest will assume it is running in a CI environment.
+- `pnpm test` — Runs all the vitest tests in the project.
+- `pnpm test:ci` — Runs all the vitest tests in the project, Vitest will assume it is running in a CI environment.
+- `pnpm test:ui` — Runs Vitest with the UI interface.
 - `pnpm analyze` — Builds the project and opens the bundle analyzer.
 
 ### Paths

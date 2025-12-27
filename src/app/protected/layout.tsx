@@ -1,14 +1,15 @@
 import { EnvVarWarning } from '@/components/env-var-warning'
 import { AuthButton } from '@/components/auth-button'
-import { Hero } from '@/components/hero'
 import { ThemeSwitcher } from '@/components/theme-switcher'
-import { ConnectSupabaseSteps } from '@/components/tutorial/connect-supabase-steps'
-import { SignUpUserSteps } from '@/components/tutorial/sign-up-user-steps'
 import { hasEnvVars } from '@/utils/env'
 import Link from 'next/link'
 import { Suspense } from 'react'
 
-export default function Home() {
+type ProtectedLayoutProps = {
+  children: React.ReactNode
+}
+
+export default function ProtectedLayout({ children }: ProtectedLayoutProps) {
   return (
     <main className="flex min-h-screen flex-col items-center">
       <div className="flex w-full flex-1 flex-col items-center gap-20">
@@ -27,11 +28,7 @@ export default function Home() {
           </div>
         </nav>
         <div className="flex max-w-5xl flex-1 flex-col gap-20 p-5">
-          <Hero />
-          <main className="flex flex-1 flex-col gap-6 px-4">
-            <h2 className="mb-4 text-xl font-medium">Next steps</h2>
-            {hasEnvVars ? <SignUpUserSteps /> : <ConnectSupabaseSteps />}
-          </main>
+          {children}
         </div>
 
         <footer className="mx-auto flex w-full items-center justify-center gap-8 border-t py-16 text-center text-xs">

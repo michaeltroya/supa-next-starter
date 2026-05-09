@@ -98,8 +98,8 @@ Websites started using this template:
 
 ### Requirements
 
-- Node.js >= 18.17.0
-- pnpm 10
+- Node.js >= 22.22.2
+- pnpm 11
 
 ### Scripts
 

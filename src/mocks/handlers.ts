@@ -1,4 +1,4 @@
-import { HttpResponse, http } from 'msw'
+import { HttpResponse, http } from 'msw/http'
 
 export const handlers = [
   // Intercept the "GET /message" request.

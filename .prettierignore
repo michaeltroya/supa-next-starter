@@ -36,4 +36,5 @@ next-env.d.ts
 
 
 pnpm-lock.yaml
+public/mockServiceWorker.js
 

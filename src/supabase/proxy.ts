@@ -23,15 +23,19 @@ export async function updateSession(request: NextRequest) {
         getAll() {
           return request.cookies.getAll()
         },
-        setAll(cookiesToSet) {
+        setAll(cookiesToSet, headers) {
           cookiesToSet.forEach(({ name, value }) =>
             request.cookies.set(name, value),
           )
           supabaseResponse = NextResponse.next({
             request,
+            headers: supabaseResponse.headers,
           })
           cookiesToSet.forEach(({ name, value, options }) =>
             supabaseResponse.cookies.set(name, value, options),
+          )
+          Object.entries(headers).forEach(([name, value]) =>
+            supabaseResponse.headers.set(name, value),
           )
         },
       },
@@ -56,14 +60,22 @@ export async function updateSession(request: NextRequest) {
     // no user, potentially respond by redirecting the user to the login page
     const url = request.nextUrl.clone()
     url.pathname = '/auth/login'
-    return NextResponse.redirect(url)
+    const response = NextResponse.redirect(url)
+    supabaseResponse.cookies
+      .getAll()
+      .forEach((cookie) => response.cookies.set(cookie))
+    for (const name of ['cache-control', 'expires', 'pragma']) {
+      const value = supabaseResponse.headers.get(name)
+      if (value) response.headers.set(name, value)
+    }
+    return response
   }
 
   // IMPORTANT: You *must* return the supabaseResponse object as it is.
   // If you're creating a new response object with NextResponse.next() make sure to:
   // 1. Pass the request in it, like so:
   //    const myNewResponse = NextResponse.next({ request })
-  // 2. Copy over the cookies, like so:
+  // 2. Copy over the cookies and cache headers, like in the redirect above:
   //    myNewResponse.cookies.setAll(supabaseResponse.cookies.getAll())
   // 3. Change the myNewResponse object to fit your needs, but avoid changing
   //    the cookies!

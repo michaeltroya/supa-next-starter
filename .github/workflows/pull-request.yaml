@@ -5,27 +5,21 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
   frontend-pull-request:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/setup@v3
         with:
-          package_json_file: package.json
-          run_install: false
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm i
+          cache: true
+          require-lockfile: true
 
       - name: Run type check
         run: pnpm type-check
@@ -38,3 +32,9 @@ jobs:
 
       - name: Run tests
         run: pnpm test:ci
+
+      - name: Build production app
+        run: pnpm build
+
+      - name: Audit dependencies
+        run: pnpm audit

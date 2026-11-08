@@ -8,6 +8,13 @@ export async function GET(request: NextRequest) {
   const token_hash = searchParams.get('token_hash')
   const type = searchParams.get('type') as EmailOtpType | null
   const next = searchParams.get('next') ?? '/'
+  let redirectTo = new URL('/', request.url)
+  try {
+    const destination = new URL(next, request.url)
+    if (destination.origin === redirectTo.origin) redirectTo = destination
+  } catch {
+    // Malformed redirect destinations fall back to the app's home page.
+  }
 
   if (token_hash && type) {
     const supabase = await createClient()
@@ -18,10 +25,10 @@ export async function GET(request: NextRequest) {
     })
     if (!error) {
       // redirect user to specified redirect URL or root of app
-      redirect(next)
+      redirect(redirectTo.href)
     } else {
       // redirect the user to an error page with some instructions
-      redirect(`/auth/error?error=${error?.message}`)
+      redirect(`/auth/error?${new URLSearchParams({ error: error.message })}`)
     }
   }
 
